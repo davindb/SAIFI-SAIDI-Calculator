@@ -1,0 +1,24 @@
+{
+  "name": "saifi-saidi-calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davindb/SAIFI-SAIDI-Calculator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davindb/SAIFI-SAIDI-Calculator/issues"
+  },
+  "homepage": "https://github.com/davindb/SAIFI-SAIDI-Calculator#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
