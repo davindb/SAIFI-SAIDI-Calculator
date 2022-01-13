@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1"
+    />
+    <link
+      rel="shortcut icon"
+      href="assets/images/logo.png"
+      type="image/x-icon"
+    />
+    <meta name="description" content="" />
+
+    <title>SAIFI & SAIDI Calculator</title>
+    <link
+      rel="stylesheet"
+      href="assets/web/assets/mobirise-icons2/mobirise2.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/web/assets/mobirise-icons/mobirise-icons.css"
+    />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css" />
+    <link
+      rel="stylesheet"
+      href="assets/bootstrap/css/bootstrap-reboot.min.css"
+    />
+    <link rel="stylesheet" href="assets/dropdown/css/style.css" />
+    <link rel="stylesheet" href="assets/socicon/css/styles.css" />
+    <link rel="stylesheet" href="assets/theme/css/style.css" />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css?family=Space+Grotesk:300,400,500,600,700&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Space+Grotesk:300,400,500,600,700&display=swap"
+    /></noscript>
+    <link
+      rel="preload"
+      as="style"
+      href="assets/mobirise/css/mbr-additional.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/mobirise/css/mbr-additional.css"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <!-- begin:: MODAL 1 -->
+    <div
+      class="modal mbr-popup cid-sSAhB3BjCy fade"
+      tabindex="-1"
+      role="dialog"
+      data-overlay-color="#000000"
+      data-overlay-opacity="0.8"
+      id="modal_1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="container position-static margin-center-pos">
+            <div class="modal-header pb-0">
+              <h5 class="modal-title mbr-fonts-style display-5">Calculator</h5>
+              <button
+                type="button"
+                class="close d-flex"
+                data-dismiss="modal"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <svg
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="23"
+                  height="23"
+                  viewBox="0 0 23 23"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M13.4 12l10.3 10.3-1.4 1.4L12 13.4 1.7 23.7.3 22.3 10.6 12 .3 1.7 1.7.3 12 10.6 22.3.3l1.4 1.4L13.4 12z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="modal-body">
+              <div>
+                <div class="form-wrapper">
+                  <form
+                    action="javascript:"
+                    id="step_1"
+                    class="mbr-form form-with-styler"
+                  >
+                    <div class="dragArea">
+                      <div
+                        class="col-lg-12 col-md-12 col-sm-12 form-group align-left mt-0"
+                      >
+                        <label class="display-7">Total section:</label>
+                        <input
+                          id="section"
+                          type="number"
+                          min="1"
+                          class="form-control display-7"
+                          value="1"
+                        />
+                      </div>
+                      <div class="row">
+                        <div class="col-md-auto input-group-btn">
+                          <button
+                            id="next_1"
+                            type="submit"
+                            onclick="totalSectionFunc()"
+                            class="btn btn-primary display-4"
+                          >
+                            NEXT
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end:: MODAL 1 -->
+    <!-- begin:: MODAL 2 -->
+    <div
+      class="modal mbr-popup cid-sSAhB3BjCy fade"
+      tabindex="-1"
+      role="dialog"
+      data-overlay-color="#000000"
+      data-overlay-opacity="0.8"
+      id="modal_2"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="container position-static margin-center-pos">
+            <div class="modal-header pb-0">
+              <h5 class="modal-title mbr-fonts-style display-5">
+                Section <span id="modal_2_title"></span> <br />
+                <span class="display-7">Add TB and its Pelangggan</span>
+              </h5>
+
+              <button
+                type="button"
+                class="close d-flex"
+                data-dismiss="modal"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <svg
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="23"
+                  height="23"
+                  viewBox="0 0 23 23"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M13.4 12l10.3 10.3-1.4 1.4L12 13.4 1.7 23.7.3 22.3 10.6 12 .3 1.7 1.7.3 12 10.6 22.3.3l1.4 1.4L13.4 12z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="modal-body">
+              <div>
+                <div class="form-wrapper">
+                  <form action="javascript:" class="mbr-form form-with-styler">
+                    <div id="step_2" class="dragArea">
+                      <div
+                        class="col-lg-12 col-md-12 col-sm-12 form-group align-left mt-0"
+                      >
+                        <span id="body_form_2">
+                          <div class="input-group-append mb-3" id="input_form">
+                            <label class="display-7"
+                              >Total Pelanggan on TB 1:</label
+                            >
+                            <input
+                              id="TB_1"
+                              type="number"
+                              min="1"
+                              class="form-control display-7"
+                              value="1"
+                            />
+                          </div>
+                        </span>
+                        <div>
+                          <button
+                            id="add_more_2"
+                            type="button"
+                            class="btn btn-primary-outline"
+                          >
+                            Add More
+                          </button>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-auto input-group-btn">
+                          <button
+                            id="next_2"
+                            type="submit"
+                            onclick="totalTB()"
+                            class="btn btn-primary display-4"
+                          >
+                            NEXT
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end:: MODAL 2 -->
+    <!-- begin:: MODAL 3 -->
+    <div
+      class="modal mbr-popup cid-sSAhB3BjCy fade"
+      tabindex="-1"
+      role="dialog"
+      data-overlay-color="#000000"
+      data-overlay-opacity="0.8"
+      id="modal_3"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="container position-static margin-center-pos">
+            <div class="modal-header pb-0">
+              <h5 class="modal-title mbr-fonts-style display-5">
+                Section <span id="modal_3_title"></span> <br />
+                <span class="display-7">Add Peralatan</span>
+              </h5>
+
+              <button
+                type="button"
+                class="close d-flex"
+                data-dismiss="modal"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <svg
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="23"
+                  height="23"
+                  viewBox="0 0 23 23"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M13.4 12l10.3 10.3-1.4 1.4L12 13.4 1.7 23.7.3 22.3 10.6 12 .3 1.7 1.7.3 12 10.6 22.3.3l1.4 1.4L13.4 12z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="modal-body">
+              <div>
+                <div class="form-wrapper">
+                  <form action="javascript:" class="mbr-form form-with-styler">
+                    <div id="step_3" class="dragArea">
+                      <div
+                        class="col-lg-12 col-md-12 col-sm-12 form-group align-left mt-0"
+                      >
+                        <span id="body_form_3">
+                          <div
+                            class="input-group-append mb-3"
+                            id="input_peralatan_1"
+                          >
+                            <select id="P_1" class="form-control"></select>
+                          </div>
+                        </span>
+                        <div>
+                          <button
+                            id="add_more_3"
+                            type="button"
+                            class="btn btn-primary-outline"
+                          >
+                            Add More
+                          </button>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-auto input-group-btn">
+                          <button
+                            id="next_3"
+                            type="submit"
+                            onclick="allComponents()"
+                            class="btn btn-primary display-4"
+                          >
+                            NEXT
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end:: MODAL 3 -->
+    <section
+      data-bs-version="5.1"
+      class="menu menu1 cid-sJfYrbSYZg"
+      once="menu"
+      id="menu1-0"
+    >
+      <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+        <div class="container">
+          <div class="wrapper d-flex w-100 flex-wrap">
+            <div class="navbar-brand">
+              <span class="navbar-logo">
+                <a href="#">
+                  <img
+                    src="assets/images/logo.png"
+                    alt=""
+                    style="height: 3rem"
+                  />
+                </a>
+              </span>
+              <span class="navbar-caption-wrap"
+                ><a
+                  class="navbar-caption text-white text-primary display-7"
+                  href="../index.html"
+                  >SAIFI & SAIDI Calculator</a
+                ></span
+              >
+            </div>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-bs-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarNavAltMarkup"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul
+                class="navbar-nav nav-dropdown text-uppercase nav-right"
+                data-app-modern-menu="true"
+              >
+                <li class="nav-item">
+                  <a
+                    class="nav-link link text-white text-primary display-4"
+                    href="#home"
+                  >
+                    HOME</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link link text-white text-primary display-4"
+                    href="#"
+                    onclick="calcBtn(event)"
+                    >OPEN CALCULATOR</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </section>
+
+    <section class="header1 cid-sJfYry2agV mbr-fullscreen" id="home">
+      <div class="container">
+        <div class="wrapper">
+          <div class="row">
+            <div class="col-12 col-lg-6">
+              <p class="mbr-text mbr-fonts-style display-7">Final Project</p>
+              <h1 class="mbr-section-title mbr-fonts-style display-2">
+                <strong>SAIFI &amp; SAIDI Calculator</strong>
+              </h1>
+              <h2
+                id="contributor"
+                class="mbr-section-subtitle mbr-fonts-style mb-4 display-5"
+              ></h2>
+              <div class="mbr-section-btn mb-4">
+                <button
+                  id="download_referensi"
+                  class="btn btn-primary display-4"
+                >
+                  Download Referensi Peralatan
+                </button>
+                <a
+                  id="result_btn"
+                  class="btn btn-primary-outline display-4"
+                  href="#result"
+                  >Your Last Results</a
+                >
+              </div>
+            </div>
+            <div class="col-12 col-lg-6 mb-4 mb-lg-0">
+              <div class="image-wrapper">
+                <img src="assets/images/features1.svg" alt="" />
+              </div>
+            </div>
+
+            <div class="text-uppercase">
+              <button onclick="calcBtn(event)" class="btn btn-black m-0">
+                Open The Calculator
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content7 cid-sJg19Rd4Hn" id="result">
+      <div id="result_container" class="container">
+        <div class="wrapper">
+          <div class="mbr-section-head">
+            <h3 class="mbr-section-title mbr-fonts-style mb-0 display-2">
+              <strong>Last Results</strong>
+            </h3>
+          </div>
+          <div id="result_card" class="row mt-4"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer1 cid-sJfZkCmx47" once="footers" id="footer">
+      <div class="container">
+        <div class="wrapper text-white">
+          <div class="row mt-3">
+            <div class="col-12">
+              <p
+                id="footer_text"
+                class="card-text mbr-fonts-style display-4"
+              ></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="assets/web/assets/jquery/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/smoothscroll/smooth-scroll.js"></script>
+    <script src="assets/ytplayer/index.js"></script>
+    <script src="assets/dropdown/js/navbar-dropdown.js"></script>
+    <script src="assets/mbr-switch-arrow/mbr-switch-arrow.js"></script>
+    <script src="assets/popup-plugin/script.js"></script>
+    <script src="assets/popup-overlay-plugin/script.js"></script>
+    <script src="assets/theme/js/script.js"></script>
+    <script src="assets/formoid/formoid.min.js"></script>
+    <script src="assets/local/calculator.js"></script>
+    <script src="assets/local/script.js"></script>
+  </body>
+</html>
